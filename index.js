@@ -1,6 +1,6 @@
-var express = require("express");
-// Set Handlebars.
-var exphbs = require("express-handlebars");
+const express = require("express");
+const mongoose = require('mongoose')
+const exphbs = require("express-handlebars");
 
 var PORT = process.env.PORT || 3000;
 
@@ -17,7 +17,7 @@ app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.get('/', function (req, res, next) {
+app.get('/', function (req, res) {
   res.render('home');
 });
 
